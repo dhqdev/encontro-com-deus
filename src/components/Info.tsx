@@ -9,7 +9,6 @@ import {
   Sparkles,
   AlertTriangle,
   Home,
-  Smartphone,
   Phone
 } from "lucide-react";
 
@@ -28,9 +27,8 @@ const Info = () => {
   ];
 
   const rules = [
-    { icon: Clock, title: "Sem tempo livre", text: "Cronograma 100% dedicado" },
     { icon: Home, title: "Alojamentos separados", text: "Homens e mulheres" },
-    { icon: Smartphone, title: "Uso ZERO de celular", text: "Durante todo o encontro" },
+    { icon: AlertTriangle, title: "Orientações gerais", text: "Fornecidas no início" },
   ];
 
   const emergencyContacts = [
@@ -137,7 +135,7 @@ const Info = () => {
             <h3 className="text-2xl font-display font-bold text-foreground">Regras e Orientações</h3>
           </div>
           
-          <div className="grid sm:grid-cols-3 gap-4 mb-8">
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {rules.map((rule, index) => (
               <div key={index} className="text-center p-4 rounded-xl bg-accent/10 border border-accent/20">
                 <rule.icon className="w-8 h-8 text-accent mx-auto mb-3" />

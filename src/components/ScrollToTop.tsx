@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -18,6 +19,18 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  useEffect(() => {
+    const checkChatStatus = () => {
+      setIsChatOpen(document.body.hasAttribute('data-chat-open'));
+    };
+
+    const observer = new MutationObserver(checkChatStatus);
+    observer.observe(document.body, { attributes: true, attributeFilter: ['data-chat-open'] });
+    
+    checkChatStatus();
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -27,7 +40,7 @@ const ScrollToTop = () => {
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible && !isChatOpen && (
         <motion.button
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
