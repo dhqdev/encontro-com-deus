@@ -10,9 +10,25 @@ const Registration = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const formatPhoneNumber = (phone: string): string => {
+    // Remove all non-numeric characters
+    const cleaned = phone.replace(/\D/g, '');
+    
+    // Add country code if not present
+    if (cleaned.startsWith('55')) {
+      return cleaned;
+    }
+    return `55${cleaned}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const formattedData = {
+      ...formData,
+      phone: formatPhoneNumber(formData.phone),
+    };
 
     try {
       const response = await fetch("https://auto.tekvosoft.com/webhook/encontro-igreja", {
@@ -20,7 +36,7 @@ const Registration = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formattedData),
       });
 
       if (response.ok) {
