@@ -58,12 +58,12 @@ const Gallery = () => {
               scrollSpeed={2}
             />
           </div>
-          <p className="text-center text-sm text-muted-foreground mt-4 flex items-center justify-center gap-2 flex-wrap">
+          <p className="hidden md:flex text-center text-sm text-muted-foreground mt-4 items-center justify-center gap-2 flex-wrap">
             <span className="inline-block">✨ Arraste para navegar</span>
-            <span className="hidden sm:inline-block">•</span>
+            <span className="inline-block">•</span>
             <span className="inline-block">🖱️ Role com o mouse</span>
-            <span className="hidden sm:inline-block">•</span>
-            <span className="inline-block sm:inline">📱 Use o toque</span>
+            <span className="inline-block">•</span>
+            <span className="inline-block">📱 Use o toque</span>
           </p>
         </div>
 
