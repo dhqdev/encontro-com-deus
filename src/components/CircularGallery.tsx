@@ -248,17 +248,15 @@ class Media {
     this.plane.setParent(this.scene);
   }
   createTitle() {
-    // Apenas cria título em telas maiores que 768px
-    if (window.innerWidth >= 768) {
-      this.title = new Title({
-        gl: this.gl,
-        plane: this.plane,
-        renderer: this.renderer,
-        text: this.text,
-        textColor: this.textColor,
-        fontFamily: this.font
-      });
-    }
+    // Títulos desabilitados
+    // this.title = new Title({
+    //   gl: this.gl,
+    //   plane: this.plane,
+    //   renderer: this.renderer,
+    //   text: this.text,
+    //   textColor: this.textColor,
+    //   fontFamily: this.font
+    // });
   }
   update(scroll: any, direction: string) {
     this.plane.position.x = this.x - scroll.current - this.extra;
