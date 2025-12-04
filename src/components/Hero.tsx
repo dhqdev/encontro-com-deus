@@ -10,8 +10,8 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       
-      {/* Overlay - darker for better text readability over group photo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-foreground/80" />
+      {/* Overlay - muito mais escuro para melhor legibilidade */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85" />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto py-20">
@@ -22,15 +22,15 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="animate-fade-up-delay-1 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground leading-tight mb-4 md:mb-6">
+        <h1 className="animate-fade-up-delay-1 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
           Encontro com Deus
         </h1>
         
-        <p className="animate-fade-up-delay-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-display italic text-primary-foreground/90 mb-3 md:mb-4">
+        <p className="animate-fade-up-delay-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-display italic text-white mb-3 md:mb-4 drop-shadow-lg">
           Um Final de Semana para Transformar Sua Vida
         </p>
         
-        <p className="animate-fade-up-delay-2 text-base md:text-lg lg:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 md:mb-10 px-4">
+        <p className="animate-fade-up-delay-2 text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8 md:mb-10 px-4 drop-shadow-md">
           Uma experiência profunda de renovação espiritual, cura e reconexão com Deus.
         </p>
         
