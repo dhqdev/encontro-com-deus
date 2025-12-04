@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import CircularGallery from "./CircularGallery";
 
 import photo1 from "@/assets/gallery/photo-1.jpeg";
 import photo2 from "@/assets/gallery/photo-2.jpeg";
@@ -24,6 +25,12 @@ const photos = [
 const Gallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
+  // Prepara os itens para a galeria circular
+  const circularGalleryItems = photos.map(photo => ({
+    image: photo.src,
+    text: photo.alt
+  }));
+
   return (
     <section id="galeria" className="section-padding bg-secondary">
       <div className="container-custom">
@@ -37,6 +44,32 @@ const Gallery = () => {
           <p className="text-base md:text-lg text-muted-foreground px-4">
             Confira alguns momentos marcantes de encontros passados
           </p>
+        </div>
+
+        {/* Galeria Circular Interativa */}
+        <div className="mb-12 md:mb-16">
+          <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] relative rounded-2xl overflow-hidden shadow-2xl">
+            <CircularGallery 
+              items={circularGalleryItems}
+              bend={3} 
+              textColor="#ffffff" 
+              borderRadius={0.05} 
+              scrollEase={0.02}
+              scrollSpeed={2}
+            />
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-4 flex items-center justify-center gap-2 flex-wrap">
+            <span className="inline-block">✨ Arraste para navegar</span>
+            <span className="hidden sm:inline-block">•</span>
+            <span className="inline-block">🖱️ Role com o mouse</span>
+            <span className="hidden sm:inline-block">•</span>
+            <span className="inline-block sm:inline">📱 Use o toque</span>
+          </p>
+        </div>
+
+        {/* Divisor decorativo */}
+        <div className="flex items-center justify-center mb-8 md:mb-12">
+          <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent w-full max-w-md"></div>
         </div>
 
         {/* Mobile: 2 columns, Tablet: 3 columns, Desktop: 4 columns with featured images */}
