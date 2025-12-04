@@ -6,6 +6,8 @@ import Spiritual from "@/components/Spiritual";
 import Gallery from "@/components/Gallery";
 import Registration from "@/components/Registration";
 import Footer from "@/components/Footer";
+import EdenChatbot from "@/components/EdenChatbot";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -18,6 +20,8 @@ const Index = () => {
       <Spiritual />
       <Gallery />
       <Footer />
+      <EdenChatbot />
+      <ScrollToTop />
     </main>
   );
 };

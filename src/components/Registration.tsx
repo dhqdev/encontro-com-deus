@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Send, User, Phone, Mail, AlertCircle, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +67,13 @@ const Registration = () => {
       
       <div className="container-custom relative z-10">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               Vagas Limitadas
             </span>
@@ -76,7 +83,7 @@ const Registration = () => {
             <p className="text-lg text-muted-foreground">
               As vagas são limitadas! Garanta seu lugar neste final de semana inesquecível com Deus.
             </p>
-          </div>
+          </motion.div>
 
           <div className="card-spiritual">
             <form onSubmit={handleSubmit} className="space-y-6">

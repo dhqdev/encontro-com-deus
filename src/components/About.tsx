@@ -1,6 +1,25 @@
 import { Sparkles, Calendar, Users, Heart } from "lucide-react";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
   const features = [
     {
       icon: Sparkles,
@@ -27,7 +46,13 @@ const About = () => {
   return (
     <section id="sobre" className="section-padding bg-gradient-section">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
             Sobre o Retiro
           </span>
@@ -41,14 +66,21 @@ const About = () => {
             na presença de Deus, cheios de 
             <span className="text-accent font-semibold"> cura, liberdade, reflexão e restauração</span>.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="card-spiritual text-center group hover:shadow-elevated transition-all duration-500 hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -8 }}
+              className="card-spiritual text-center group hover:shadow-elevated transition-all duration-500"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-golden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-8 h-8 text-primary-foreground" />
@@ -59,9 +91,9 @@ const About = () => {
               <p className="text-muted-foreground">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

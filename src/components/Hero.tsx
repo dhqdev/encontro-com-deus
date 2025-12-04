@@ -1,20 +1,32 @@
 import heroBg from "@/assets/hero-bg.jpg";
 import { Heart } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
+      {/* Background Image with Parallax */}
+      <motion.div 
+        style={{ y }}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+      >
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+      </motion.div>
       
       {/* Overlay - muito mais escuro para melhor legibilidade */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85" />
       
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto py-20">
+      <motion.div 
+        style={{ opacity }}
+        className="relative z-10 text-center px-4 max-w-5xl mx-auto py-20"
+      >
         <div className="animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-6 md:mb-8">
             <Heart className="w-4 h-4 text-primary" fill="currentColor" />
@@ -45,7 +57,7 @@ const Hero = () => {
             Quero Participar
           </a>
         </div>
-      </div>
+      </motion.div>
       
       {/* Scroll indicator */}
       <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
