@@ -1,73 +1,213 @@
-# Welcome to your Lovable project
+# Encontro com Deus 🙏
 
-## Project info
+Site oficial do retiro espiritual **Encontro com Deus** - Um ministério de transformação dedicado a promover experiências profundas de renovação espiritual, cura e reconexão com Deus.
 
-**URL**: https://lovable.dev/projects/224a097e-274e-4505-98df-02b8ca54ab96
+## 📖 Sobre o Projeto
 
-## How can I edit this code?
+Este é um site moderno e responsivo desenvolvido para o retiro "Encontro com Deus", oferecendo uma experiência digital imersiva que reflete a profundidade espiritual do evento. O site apresenta:
 
-There are several ways of editing your application.
+- **Landing Page Atraente**: Hero section com efeito parallax e animações suaves
+- **Informações Completas**: Sobre o retiro, valores, cronograma e ministérios
+- **Sistema de Inscrição**: Formulário integrado para registro de participantes
+- **Galeria 3D Interativa**: Galeria circular em WebGL com fotos dos eventos anteriores
+- **Chatbot Inteligente**: Assistente virtual para responder dúvidas sobre o retiro
+- **Design Responsivo**: Totalmente otimizado para desktop, tablet e mobile
 
-**Use Lovable**
+## ✨ Funcionalidades
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/224a097e-274e-4505-98df-02b8ca54ab96) and start prompting.
+### 🎨 Galeria Circular 3D
+- Renderização WebGL de alta performance usando OGL (Open Graphics Library)
+- Navegação fluida com mouse, touch e scroll
+- Efeito de curvatura circular das imagens
+- Scroll infinito com transições suaves
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📝 Sistema de Inscrição
+- Formulário de registro com validação
+- Integração com webhook para processamento de inscrições
+- Notificações de sucesso/erro em tempo real
+- Formatação automática de telefone
 
-**Use your preferred IDE**
+### 💬 Chatbot Inteligente (Eden)
+- Assistente virtual para tirar dúvidas
+- Interface moderna e intuitiva
+- Respostas contextualizadas sobre o retiro
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🎭 Animações e Interatividade
+- Efeitos de scroll e parallax com Framer Motion
+- Animações de entrada suaves
+- Hover effects e transições fluidas
+- Botão WhatsApp flutuante para contato rápido
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Tecnologias Utilizadas
 
-Follow these steps:
+### Core
+- **React 18.3** - Biblioteca JavaScript para interfaces de usuário
+- **TypeScript 5.8** - Superset tipado do JavaScript
+- **Vite 5.4** - Build tool e dev server de alta performance
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### UI/UX
+- **TailwindCSS 3.4** - Framework CSS utility-first
+- **shadcn/ui** - Componentes React reutilizáveis e acessíveis
+- **Framer Motion 12.23** - Biblioteca de animações
+- **Lucide React** - Ícones modernos e customizáveis
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 3D/WebGL
+- **OGL 1.0** - Biblioteca WebGL minimalista para renderização 3D
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Roteamento e Estado
+- **React Router DOM 6.30** - Navegação entre páginas
+- **TanStack Query 5.83** - Gerenciamento de estado assíncrono
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Formulários
+- **React Hook Form 7.61** - Gerenciamento de formulários
+- **Zod 3.25** - Validação de schemas
+
+### Outras Bibliotecas
+- **OpenAI** - Integração com IA para chatbot
+- **Sonner** - Sistema de notificações toast
+- **Recharts** - Biblioteca de gráficos (se necessário)
+
+## 📦 Instalação e Execução
+
+### Pré-requisitos
+- Node.js 18+ ou Bun
+- npm, yarn ou bun
+
+### Instalação com npm
+```bash
+# Clone o repositório
+git clone <URL_DO_REPOSITORIO>
+
+# Entre no diretório
+cd encontro-com-deus
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Instalação com bun (recomendado)
+```bash
+# Clone o repositório
+git clone <URL_DO_REPOSITORIO>
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Entre no diretório
+cd encontro-com-deus
 
-**Use GitHub Codespaces**
+# Instale as dependências
+bun install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Inicie o servidor de desenvolvimento
+bun run dev
+```
 
-## What technologies are used for this project?
+O site estará disponível em `http://localhost:5173`
 
-This project is built with:
+## 📜 Scripts Disponíveis
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `npm run dev` ou `bun run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` ou `bun run build` - Compila o projeto para produção
+- `npm run build:dev` - Compila em modo desenvolvimento
+- `npm run preview` - Visualiza a build de produção localmente
+- `npm run lint` - Executa o linter ESLint
 
-## How can I deploy this project?
+## 📁 Estrutura do Projeto
 
-Simply open [Lovable](https://lovable.dev/projects/224a097e-274e-4505-98df-02b8ca54ab96) and click on Share -> Publish.
+```
+encontro-com-deus/
+├── public/              # Arquivos estáticos
+│   └── robots.txt
+├── src/
+│   ├── assets/         # Imagens e recursos
+│   │   └── gallery/    # Fotos da galeria
+│   ├── components/     # Componentes React
+│   │   ├── ui/        # Componentes shadcn/ui
+│   │   ├── About.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Gallery.tsx
+│   │   ├── CircularGallery.tsx
+│   │   ├── Registration.tsx
+│   │   ├── EdenChatbot.tsx
+│   │   └── ...
+│   ├── hooks/         # Custom hooks
+│   ├── lib/           # Utilitários
+│   ├── pages/         # Páginas da aplicação
+│   │   ├── Index.tsx
+│   │   └── NotFound.tsx
+│   ├── App.tsx        # Componente raiz
+│   └── main.tsx       # Entry point
+├── package.json
+├── vite.config.ts
+├── tailwind.config.ts
+└── tsconfig.json
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 Componentes Principais
 
-Yes, you can!
+### Hero
+Seção inicial com imagem de fundo, efeito parallax e call-to-action para inscrição.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### About
+Apresentação do retiro com cards informativos sobre transformação, frequência e impacto.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Value
+Seção de valores e princípios do ministério.
+
+### Info
+Informações detalhadas sobre cronograma e atividades.
+
+### Spiritual
+Descrição dos ministérios e aspectos espirituais do retiro.
+
+### Gallery
+Galeria de fotos com duas visualizações:
+- Galeria tradicional em grid
+- Galeria circular 3D interativa (CircularGallery)
+
+### Registration
+Formulário de inscrição integrado com sistema de processamento.
+
+### EdenChatbot
+Chatbot inteligente para responder dúvidas dos visitantes.
+
+## 🚀 Deploy
+
+Para fazer o deploy do projeto:
+
+```bash
+# Build de produção
+npm run build
+
+# Os arquivos estarão na pasta dist/
+```
+
+O projeto pode ser hospedado em plataformas como:
+- Vercel
+- Netlify
+- GitHub Pages
+- Firebase Hosting
+- AWS S3 + CloudFront
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para:
+1. Fazer fork do projeto
+2. Criar uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
+5. Abrir um Pull Request
+
+## 📄 Licença
+
+Este projeto é privado e destinado ao uso exclusivo do ministério Encontro com Deus.
+
+## 📞 Contato
+
+Para mais informações sobre o retiro ou sobre o desenvolvimento do site, entre em contato através dos canais oficiais do ministério.
+
+---
+
+**Desenvolvido com ❤️ para transformar vidas através de experiências espirituais profundas.**
+
