@@ -2,6 +2,8 @@
 
 Site oficial do retiro espiritual **Encontro com Deus** - Um ministério de transformação dedicado a promover experiências profundas de renovação espiritual, cura e reconexão com Deus.
 
+<img width="1922" height="1002" alt="image" src="https://github.com/user-attachments/assets/7ab7306e-da03-4747-bd1c-466bed665bb2" />
+
 ## 📖 Sobre o Projeto
 
 Este é um site moderno e responsivo desenvolvido para o retiro "Encontro com Deus", oferecendo uma experiência digital imersiva que reflete a profundidade espiritual do evento. O site apresenta:
