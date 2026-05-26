@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import './CircularGallery.css';
 
 function debounce(func: (...args: any[]) => void, wait: number) {
-  let timeout: NodeJS.Timeout;
+  let timeout: ReturnType<typeof setTimeout>;
   return function (this: any, ...args: any[]) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
