@@ -54,7 +54,7 @@ const EdenChatbot = () => {
    
    **O QUE É:**
    - Retiro espiritual transformador de um único final de semana
-   - Acontece a cada 4 meses no Seminário Teológico Nazareno do Brasil
+   - Acontece a cada 3 meses no Seminário Teológico Nazareno do Brasil
    - Local: Estr. da Rhodia, Km 15 - Barão Geraldo, Campinas - SP
    - Centenas de vidas já foram transformadas
    - Dias intensos de cura, liberdade, reflexão e restauração na presença de Deus

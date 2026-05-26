@@ -7,7 +7,7 @@ const features = [
     description: "Experiência profunda de mudança interior através da presença de Deus.",
   },
   {
-    label: "A cada 4 meses",
+    label: "A cada 3 meses",
     description: "Um retiro especial preparado com oração, amor e muito cuidado.",
   },
   {

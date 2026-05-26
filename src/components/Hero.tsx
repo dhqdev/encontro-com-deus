@@ -64,12 +64,41 @@ const Hero = () => {
           </div>
 
           <div className="bg-background/70 backdrop-blur-md rounded-2xl px-5 py-4 mb-5 shadow-lg">
-            <h1 className="text-3xl font-jakarta font-semibold text-foreground/90 leading-snug mb-2">
-              Encontro com Deus!
+            <h1 className="font-jakarta font-semibold leading-snug mb-2">
+              <motion.span
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: 0.25 }}
+                className="block text-2xl text-foreground/60 font-light tracking-wide"
+              >
+                Bem vindo ao
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: 0.45 }}
+                className="block text-3xl text-accent"
+              >
+                Encontro com Deus!
+              </motion.span>
             </h1>
-            <p className="text-base font-sans font-light tracking-wide text-muted-foreground">
-              Um final de semana para transformar sua vida.
-            </p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.75 }}
+              className="text-base font-sans font-light tracking-wide text-muted-foreground"
+            >
+              Um final de semana para{" "}
+              <span className="relative inline-block">
+                <span className="text-foreground/75 font-normal">transformar sua vida.</span>
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.45, delay: 1.1, ease: "easeOut" }}
+                  className="absolute bottom-0 left-0 right-0 h-px bg-accent/50 origin-left"
+                />
+              </span>
+            </motion.p>
           </div>
 
           <a
@@ -101,17 +130,42 @@ const Hero = () => {
                 />
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-              >
-                <h1 className="text-3xl lg:text-4xl font-jakarta font-semibold text-foreground/90 leading-snug mb-4">
-                  Bem vindo ao Encontro com Deus!
+              <div>
+                <h1 className="font-jakarta font-semibold leading-snug mb-4">
+                  <motion.span
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="block text-xl lg:text-2xl text-foreground/50 font-light tracking-widest uppercase"
+                  >
+                    Bem vindo ao
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.65, ease: "easeOut", delay: 0.3 }}
+                    className="block text-4xl lg:text-5xl text-accent"
+                  >
+                    Encontro com Deus!
+                  </motion.span>
                 </h1>
-                <p className="text-lg font-sans font-light tracking-wide text-muted-foreground mb-10">
-                  Um final de semana para transformar sua vida.
-                </p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.65 }}
+                  className="text-lg font-sans font-light tracking-wide text-muted-foreground mb-10"
+                >
+                  Um final de semana para{" "}
+                  <span className="relative inline-block">
+                    <span className="text-foreground/70 font-normal">transformar sua vida.</span>
+                    <motion.span
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.5, delay: 1.1, ease: "easeOut" }}
+                      className="absolute bottom-0 left-0 right-0 h-px bg-accent/50 origin-left"
+                    />
+                  </span>
+                </motion.p>
                 <div className="flex flex-wrap gap-4">
                   <a
                     href={FORM_URL}
@@ -131,7 +185,7 @@ const Hero = () => {
                     Tirar Dúvidas
                   </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Coluna direita: 2 fotos topo + slideshow */}
