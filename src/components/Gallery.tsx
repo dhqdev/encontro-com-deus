@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { motion } from "framer-motion";
 import CircularGallery from "./CircularGallery";
 
 import photo1 from "@/assets/gallery/photo-1.jpeg";
@@ -34,8 +35,14 @@ const Gallery = () => {
   return (
     <section id="galeria" className="section-padding bg-secondary">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-8 md:mb-12"
+        >
+          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
             Momentos
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold text-foreground mb-4 md:mb-6">
@@ -44,10 +51,16 @@ const Gallery = () => {
           <p className="text-base md:text-lg text-muted-foreground px-4">
             Confira alguns momentos marcantes de encontros passados
           </p>
-        </div>
+        </motion.div>
 
         {/* Galeria Circular Interativa */}
-        <div className="mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-12 md:mb-16"
+        >
           <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] relative rounded-2xl overflow-hidden shadow-2xl">
             <CircularGallery 
               items={circularGalleryItems}
@@ -58,14 +71,10 @@ const Gallery = () => {
               scrollSpeed={2}
             />
           </div>
-          <p className="hidden md:flex text-center text-sm text-muted-foreground mt-4 items-center justify-center gap-2 flex-wrap">
-            <span className="inline-block">✨ Arraste para navegar</span>
-            <span className="inline-block">•</span>
-            <span className="inline-block">🖱️ Role com o mouse</span>
-            <span className="inline-block">•</span>
-            <span className="inline-block">📱 Use o toque</span>
+          <p className="hidden md:flex text-center text-sm text-muted-foreground mt-4 items-center justify-center gap-2">
+            <span>Arraste para navegar · Role com o mouse · Use o toque</span>
           </p>
-        </div>
+        </motion.div>
 
         {/* Divisor decorativo */}
         <div className="flex items-center justify-center mb-8 md:mb-12">

@@ -4,7 +4,6 @@ import Info from "@/components/Info";
 import Spiritual from "@/components/Spiritual";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
-import EdenChatbot from "@/components/EdenChatbot";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
@@ -16,7 +15,6 @@ const Index = () => {
       <Spiritual />
       <Gallery />
       <Footer />
-      <EdenChatbot />
       <ScrollToTop />
     </main>
   );

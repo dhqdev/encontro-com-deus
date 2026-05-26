@@ -109,6 +109,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
   }
 
   body {
@@ -152,6 +153,71 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground;
+  }
+
+  /* ── Bubbles button ── */
+  .btn-bubbles {
+    --c1: hsl(var(--background));
+    --c2: hsl(var(--accent));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75em 2.25em;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: 2.5px solid var(--c2);
+    border-radius: 0.4em;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  .btn-bubbles > .btn-bubbles-text {
+    font-weight: 700;
+    color: var(--c2);
+    position: relative;
+    z-index: 1;
+    transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  .btn-bubbles::before {
+    top: 0;
+    left: 0;
+  }
+
+  .btn-bubbles::after {
+    top: 100%;
+    left: 100%;
+  }
+
+  .btn-bubbles::before,
+  .btn-bubbles::after {
+    content: "";
+    width: 150%;
+    aspect-ratio: 1/1;
+    scale: 0;
+    transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+    background-color: var(--c2);
+    border-radius: 50%;
+    position: absolute;
+    translate: -50% -50%;
+  }
+
+  .btn-bubbles:hover > .btn-bubbles-text {
+    color: var(--c1);
+  }
+
+  .btn-bubbles:hover::before,
+  .btn-bubbles:hover::after {
+    scale: 1;
+  }
+
+  .btn-bubbles:active {
+    scale: 0.98;
+    filter: brightness(0.9);
   }
 
   .animate-fade-up {
@@ -218,12 +284,32 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Scrollbar customization for chatbot */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* ── Mobile fluidity ──────────────────────────────── */
+
+/* Remove 300ms tap delay globally */
+* {
+  touch-action: manipulation;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+/* Remove tap highlight on interactive elements */
+a, button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth momentum scroll on iOS */
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text size inflation on orientation change */
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Tighter section padding on very small screens */
+@media (max-width: 400px) {
+  .section-padding {
+    @apply py-12 px-4;
+  }
 }

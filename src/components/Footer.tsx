@@ -1,18 +1,22 @@
-import { Heart, MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <motion.footer
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6 }}
+      className="bg-foreground text-primary-foreground"
+    >
       <div className="container-custom py-12 px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo/About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-golden flex items-center justify-center">
-                <Heart className="w-5 h-5 text-primary-foreground" fill="currentColor" />
-              </div>
+            <div className="mb-4">
               <span className="text-xl font-display font-bold">Encontro com Deus</span>
             </div>
             <p className="text-primary-foreground/70 text-sm">
@@ -30,7 +34,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>(19) 98358-6167</span>
+                <a
+                  href="https://wa.me/5519983586167"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  (19) 98358-6167
+                </a>
               </div>
             </div>
           </div>
@@ -60,11 +71,11 @@ const Footer = () => {
             © {currentYear} Encontro com Deus. Todos os direitos reservados.
           </p>
           <p className="mt-1">
-            Feito com <Heart className="w-3 h-3 inline text-accent" fill="currentColor" /> para a glória de Deus
+            Feito com dedicação para a glória de Deus
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
