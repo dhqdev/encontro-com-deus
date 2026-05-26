@@ -61,7 +61,7 @@ const Spiritual = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="max-w-3xl mx-auto text-center mb-14"
+            className="max-w-3xl mx-auto text-center mb-8 md:mb-14"
           >
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
               Experiência
@@ -86,17 +86,22 @@ const Spiritual = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-3 mb-14"
+            className="mb-8 md:mb-14"
           >
-            {expectations.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/40"
-              >
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                <span className="text-foreground text-sm leading-relaxed">{item}</span>
+            {/* Marquee: cards deslizando em loop infinito */}
+            <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+              <div className="flex gap-3 animate-marquee w-max">
+                {[...expectations, ...expectations].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-2 p-3 rounded-xl bg-card border border-border/40 w-52 flex-shrink-0"
+                  >
+                    <div className="mt-0.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                    <span className="text-foreground text-xs leading-snug">{item}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </motion.div>
 
           {/* Tags */}
@@ -123,7 +128,7 @@ const Spiritual = () => {
             transition={{ duration: 0.7 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 md:mb-12">
               <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
                 Tire suas dúvidas
               </span>
@@ -163,7 +168,7 @@ const Spiritual = () => {
             className="max-w-2xl mx-auto text-center"
           >
             {/* Ornament */}
-            <div className="flex items-center gap-6 max-w-xs mx-auto mb-12">
+            <div className="flex items-center gap-6 max-w-xs mx-auto mb-8 md:mb-12">
               <div className="flex-1 h-px bg-border" />
               <div className="w-1.5 h-1.5 rounded-full bg-accent" />
               <div className="flex-1 h-px bg-border" />

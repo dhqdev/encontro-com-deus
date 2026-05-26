@@ -121,9 +121,24 @@
   }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
+    @apply py-8 md:py-24 px-4 md:px-8;
+  }
+
+  /* ── Infinite marquee ── */
+  .animate-marquee {
+    animation: marquee 24s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 
   .container-custom {

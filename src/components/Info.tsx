@@ -40,7 +40,7 @@ const Info = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUp}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 md:mb-16"
         >
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
             Prepare-se
@@ -55,7 +55,7 @@ const Info = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="grid lg:grid-cols-2 gap-8 mb-8"
+          className="grid md:grid-cols-2 gap-6 mb-6"
         >
           <motion.div variants={fadeUp} className="card-spiritual">
             <h3 className="text-xl font-display font-bold text-foreground mb-1">Programação</h3>

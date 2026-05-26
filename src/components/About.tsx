@@ -36,7 +36,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 md:mb-16"
         >
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
             Sobre o Retiro
@@ -55,7 +55,7 @@ const About = () => {
         </motion.div>
 
         {/* Divisor */}
-        <div className="flex items-center gap-6 max-w-xs mx-auto mb-16">
+        <div className="flex items-center gap-6 max-w-xs mx-auto mb-8 md:mb-16">
           <div className="flex-1 h-px bg-border" />
           <div className="w-1.5 h-1.5 rounded-full bg-accent" />
           <div className="flex-1 h-px bg-border" />
