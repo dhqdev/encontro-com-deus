@@ -3,20 +3,24 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const features = [
   {
-    label: "Transformação",
-    description: "Experiência profunda de mudança interior através da presença de Deus.",
+    label: "Revisão de Vida",
+    description: "Um convite para parar, olhar para a própria história e permitir que Deus traga luz sobre cada área da vida — relacionamentos, escolhas, feridas, perdão e propósito.",
   },
   {
-    label: "A cada 3 meses",
-    description: "Um retiro especial preparado com oração, amor e muito cuidado.",
+    label: "Conserto Espiritual",
+    description: "Alinhar novamente o coração, as prioridades e o propósito, deixando Deus reordenar aquilo que foi desalinhado ao longo do caminho.",
   },
   {
-    label: "Centenas de vidas",
-    description: "Já foram transformadas em edições anteriores do encontro.",
+    label: "Cura Interior",
+    description: "Tratar feridas, dores e marcas do passado que ainda afetam o presente — um tempo de profundo cuidado e restauração interior.",
   },
   {
-    label: "Cura e Liberdade",
-    description: "Dias intensos de restauração, reflexão e renovação espiritual.",
+    label: "Libertação",
+    description: "Romper prisões emocionais e espirituais que impedem o pleno viver. Onde o Espírito do Senhor está, há liberdade.",
+  },
+  {
+    label: "Reconciliação",
+    description: "Restaurar relacionamentos, identidade e comunhão com Deus — um reencontro com aquilo que foi perdido: sonhos, esperança e propósito.",
   },
 ];
 
@@ -41,10 +45,12 @@ const About = () => {
             O que é o Encontro com Deus?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Um retiro espiritual de um único final de semana, preparado com muito{" "}
-            <span className="text-foreground font-medium">amor, oração e propósito</span>.
-            São dias intensos na presença de Deus, cheios de{" "}
-            <span className="text-foreground font-medium">cura, liberdade e restauração</span>.
+            Um período de imersão espiritual realizado em um único final de semana, preparado com{" "}
+            <span className="text-foreground font-medium">oração, amor e propósito</span>.
+            Mais do que um retiro, é um tempo separado para uma profunda{" "}
+            <span className="text-foreground font-medium">revisão de vida</span>, permitindo que
+            Deus visite áreas do coração que muitas vezes permanecem{" "}
+            <span className="text-foreground font-medium">escondidas, esquecidas ou feridas</span>.
           </p>
         </motion.div>
 
