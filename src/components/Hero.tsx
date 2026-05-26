@@ -1,70 +1,52 @@
 import heroBg from "@/assets/hero-bg.jpg";
 import { Heart } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax */}
-      <motion.div 
-        style={{ y }}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      >
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
+    <section className="relative bg-background">
+      {/* Image */}
+      <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-[80vh] overflow-hidden">
+        <img
+          src={heroBg}
+          alt="Encontro com Deus - retiro espiritual"
+          className="w-full h-full object-cover"
         />
-      </motion.div>
-      
-      {/* Overlay - muito mais escuro para melhor legibilidade */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85" />
-      
-      {/* Content */}
-      <motion.div 
-        style={{ opacity }}
-        className="relative z-10 text-center px-4 max-w-5xl mx-auto py-20"
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      </div>
+
+      {/* Text content below image */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 -mt-16 md:-mt-24 text-center px-6 max-w-3xl mx-auto pb-16 md:pb-24"
       >
-        <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-6 md:mb-8">
-            <Heart className="w-4 h-4 text-primary" fill="currentColor" />
-            <span className="text-xs md:text-sm font-medium text-primary-foreground/90">Ministério de Transformação</span>
-          </div>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background border border-border shadow-sm mb-6">
+          <Heart className="w-3.5 h-3.5 text-primary" fill="currentColor" />
+          <span className="text-xs font-medium tracking-wider uppercase text-muted-foreground">
+            Ministério de Transformação
+          </span>
         </div>
-        
-        <h1 className="animate-fade-up-delay-1 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
+
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.05] mb-5">
           Encontro com Deus
         </h1>
-        
-        <p className="animate-fade-up-delay-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-display italic text-white mb-3 md:mb-4 drop-shadow-lg">
-          Um Final de Semana para Transformar Sua Vida
+
+        <p className="text-base sm:text-lg md:text-xl font-display italic text-muted-foreground mb-8 max-w-xl mx-auto">
+          Um final de semana para transformar sua vida.
         </p>
-        
-        <p className="animate-fade-up-delay-2 text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8 md:mb-10 px-4 drop-shadow-md">
-          Uma experiência profunda de renovação espiritual, cura e reconexão com Deus.
-        </p>
-        
-        <div className="animate-fade-up-delay-3">
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdTEy2bdiKBjoZNm_acb4kJUbBymEq-30UfjYQjMyidiyrKLQ/viewform" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-primary animate-pulse-glow text-base md:text-lg"
-          >
-            <Heart className="w-5 h-5" />
-            Quero Participar
-          </a>
-        </div>
+
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdTEy2bdiKBjoZNm_acb4kJUbBymEq-30UfjYQjMyidiyrKLQ/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary text-base"
+        >
+          <Heart className="w-4 h-4" />
+          Quero Participar
+        </a>
       </motion.div>
-      
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/50 flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full" />
-        </div>
-      </div>
     </section>
   );
 };
