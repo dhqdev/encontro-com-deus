@@ -33,7 +33,7 @@ const Gallery = () => {
   }));
 
   return (
-    <section id="galeria" className="section-padding bg-secondary">
+    <section id="galeria" className="section-padding bg-secondary md:hidden">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

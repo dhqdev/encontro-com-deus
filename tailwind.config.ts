@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         display: ["Cormorant Garamond", "Georgia", "serif"],
         body: ["Lato", "system-ui", "sans-serif"],
+        jakarta: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
