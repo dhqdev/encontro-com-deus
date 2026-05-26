@@ -83,19 +83,21 @@ const About = () => {
                 onMouseLeave={() => setActiveIndex(null)}
               >
                 {/* Número */}
-                <span className="absolute top-6 left-6 text-sm font-bold uppercase tracking-widest text-accent z-10">
+                <span className="absolute top-6 left-6 text-base font-bold uppercase tracking-widest text-accent z-10">
                   0{index + 1}
                 </span>
 
                 {/* Título — rotaciona quando fechado */}
                 <div className="flex-1 flex items-center justify-center px-6 pt-10">
                   <h3
-                    className="font-display text-foreground whitespace-nowrap transition-all duration-500"
+                    className="font-display whitespace-nowrap transition-all duration-500"
                     style={{
                       transform: isActive ? "rotate(0deg)" : "rotate(-90deg)",
-                      fontSize: isActive ? "2rem" : "1.35rem",
-                      fontWeight: 800,
-                      letterSpacing: isActive ? "-0.02em" : "0.03em",
+                      fontSize: isActive ? "2.6rem" : "1.7rem",
+                      fontWeight: 900,
+                      letterSpacing: isActive ? "-0.03em" : "0.04em",
+                      color: isActive ? "hsl(var(--foreground))" : "hsl(var(--foreground) / 0.75)",
+                      textShadow: isActive ? "0 2px 24px hsl(var(--accent) / 0.15)" : "none",
                     }}
                   >
                     {feature.label}
@@ -151,7 +153,7 @@ const About = () => {
                     </span>
                     <h3
                       className="font-display text-foreground leading-tight"
-                      style={{ fontSize: "1.2rem", fontWeight: 800 }}
+                      style={{ fontSize: "1.45rem", fontWeight: 900 }}
                     >
                       {feature.label}
                     </h3>
