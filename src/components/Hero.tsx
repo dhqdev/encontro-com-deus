@@ -65,7 +65,7 @@ const Hero = () => {
 
           <div className="bg-background/70 backdrop-blur-md rounded-2xl px-5 py-4 mb-5 shadow-lg">
             <h1 className="text-3xl font-jakarta font-semibold text-foreground/90 leading-snug mb-2">
-              Seja bem vindo ao Encontro com Deus!
+              Encontro com Deus!
             </h1>
             <p className="text-base font-sans font-light tracking-wide text-muted-foreground">
               Um final de semana para transformar sua vida.

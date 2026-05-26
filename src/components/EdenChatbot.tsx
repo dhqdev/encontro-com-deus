@@ -1,4 +1,4 @@
-import { MessageCircle, X, Send, Sparkles, Phone } from "lucide-react";
+import { MessageCircle, X, Send, Sparkles } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import OpenAI from "openai";
@@ -100,6 +100,8 @@ const EdenChatbot = () => {
    - Pode ser feita pelo site ou diretamente pelo formulário do Google
    - Link: https://docs.google.com/forms/d/e/1FAIpQLSdTEy2bdiKBjoZNm_acb4kJUbBymEq-30UfjYQjMyidiyrKLQ/viewform
    - Importante: Vagas limitadas! Garanta seu lugar o quanto antes.
+
+**REGRA CRÍTICA**: NUNCA peça nome, telefone, e-mail ou qualquer dado pessoal ao usuário. Para inscrição, sempre direcione para o formulário do Google ou para os contatos de emergência. Você é um conselheiro espiritual, não um formulário de cadastro.
 
 **Estilo de comunicação**:
 - Amoroso e compassivo como um discípulo de Cristo
@@ -290,11 +292,7 @@ Lembre-se: você é uma ponte entre as pessoas e a experiência transformadora d
                 </button>
               </div>
               
-              {/* Contact Info melhorado */}
-              <div className="mt-2 md:mt-3 flex items-center justify-center gap-2 text-[10px] md:text-xs text-gray-600 dark:text-gray-400">
-                <Phone className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                <span className="font-medium">Contato: (19) 98358-6167</span>
-              </div>
+
             </div>
           </motion.div>
         )}
