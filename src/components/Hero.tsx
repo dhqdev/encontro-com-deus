@@ -42,13 +42,14 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl font-display font-bold text-foreground leading-[1.05] mb-4">
-            Encontro com Deus
-          </h1>
-
-          <p className="text-base font-display italic text-muted-foreground mb-8">
-            Um final de semana para transformar sua vida.
-          </p>
+          <div className="bg-background/70 backdrop-blur-md rounded-2xl px-5 py-4 mb-5 shadow-lg">
+            <h1 className="text-4xl font-display font-bold text-foreground leading-[1.05] mb-2">
+              Encontro com Deus
+            </h1>
+            <p className="text-base font-display italic text-muted-foreground">
+              Um final de semana para transformar sua vida.
+            </p>
+          </div>
 
           <a
             href={FORM_URL}
