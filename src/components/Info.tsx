@@ -26,7 +26,7 @@ const Info = () => {
       <div className="absolute top-16 left-0 w-80 h-80 bg-accent/6 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-16 right-0 w-64 h-64 bg-primary/6 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container-custom space-y-14 relative z-10">
+      <div className="container-custom space-y-8 md:space-y-14 relative z-10">
 
         {/* CABEÇALHO */}
         <motion.div
@@ -50,11 +50,11 @@ const Info = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="grid md:grid-cols-[2fr_3fr] gap-5 items-start"
+          className="grid md:grid-cols-[2fr_3fr] gap-4 md:gap-5 items-start"
         >
 
-          {/* COLUNA ESQUERDA */}
-          <motion.div variants={fadeUp} className="flex flex-col gap-5">
+          {/* COLUNA ESQUERDA — aparece depois do mapa no mobile */}
+          <motion.div variants={fadeUp} className="flex flex-col gap-4 md:gap-5 order-last md:order-first">
 
             {/* CARD PROGRAMAÇÃO */}
             <div className="rounded-3xl border border-border/60 bg-secondary/40 p-6 md:p-8 backdrop-blur-sm">
@@ -108,7 +108,7 @@ const Info = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-2 gap-3"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3"
               >
                 {emergencyContacts.map((contact, i) => (
                   <motion.a
@@ -134,10 +134,10 @@ const Info = () => {
             </div>
           </motion.div>
 
-          {/* CARD LOCAL DO RETIRO */}
+          {/* CARD LOCAL DO RETIRO — aparece primeiro no mobile */}
           <motion.div
             variants={fadeUp}
-            className="rounded-3xl border border-border/60 bg-secondary/40 overflow-hidden backdrop-blur-sm"
+            className="rounded-3xl border border-border/60 bg-secondary/40 overflow-hidden backdrop-blur-sm order-first md:order-last"
           >
             <div className="p-6 md:p-8 pb-5">
               <div className="flex items-center gap-3 mb-5">
@@ -155,7 +155,7 @@ const Info = () => {
             </div>
 
             {/* Mapa preenche o card */}
-            <div className="h-72 md:h-80 mx-5 mb-5 rounded-2xl overflow-hidden ring-1 ring-border/50">
+            <div className="h-48 md:h-80 mx-4 mb-4 md:mx-5 md:mb-5 rounded-2xl overflow-hidden ring-1 ring-border/50">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.3!2d-47.08!3d-22.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c5!2sSeminario%20Teologico%20Nazareno!5e0!3m2!1spt-BR!2sbr!4v1"
                 width="100%"
@@ -175,7 +175,5 @@ const Info = () => {
     </section>
   );
 };
-
-export default Info;
 
 export default Info;
