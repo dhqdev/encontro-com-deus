@@ -8,18 +8,7 @@ import photo7 from "@/assets/gallery/photo-7.jpeg";
 import photo8 from "@/assets/gallery/photo-8.jpeg";
 
 const FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdTEy2bdiKBjoZNm_acb4kJUbBymEq-30UfjYQjMyidiyrKLQ/viewform";
-
-/** Abre o link após a animação bubble terminar (~900ms) */
-const handleParticipate = (e: React.MouseEvent<HTMLAnchorElement>) => {
-  e.preventDefault();
-  setTimeout(() => {
-    // window.open funciona aqui pois a "user activation" do clique dura ~5s
-    // iOS Safari pode bloquear e retornar null → fallback mesma aba
-    const opened = window.open(FORM_URL, "_blank", "noopener,noreferrer");
-    if (!opened) window.location.href = FORM_URL;
-  }, 900);
-};
+  "https://encontrocomdeus-inne.vercel.app/inscrever";
 
 const Hero = () => {
   const slideshowPhotos = [photo6, photo7, photo8];
@@ -106,7 +95,6 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-fill"
-            onClick={handleParticipate}
           >
             Quero Participar
           </a>
@@ -172,7 +160,6 @@ const Hero = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-fill"
-                    onClick={handleParticipate}
                   >
                     Quero Participar
                   </a>

@@ -165,7 +165,7 @@ const Registration = () => {
               <p className="text-sm text-muted-foreground">
                 Você também pode fazer sua inscrição diretamente pelo{" "}
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdTEy2bdiKBjoZNm_acb4kJUbBymEq-30UfjYQjMyidiyrKLQ/viewform"
+                  href="https://encontrocomdeus-inne.vercel.app/inscrever"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary font-medium hover:underline"
