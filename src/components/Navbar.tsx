@@ -6,14 +6,18 @@ const anchorItems = [
   { label: "Início", href: "#" },
   { label: "Sobre", href: "#sobre" },
   { label: "Informações", href: "#informacoes" },
-  { label: "Inscrição", href: "#inscricao" },
+  { label: "Inscrição", href: "https://encontrocomdeus-inne.vercel.app/inscrever", external: true },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollTo = (href: string) => {
+  const handleNav = (href: string, external?: boolean) => {
     setIsOpen(false);
+    if (external) {
+      window.open(href, "_blank", "noopener,noreferrer");
+      return;
+    }
     setTimeout(() => {
       if (href === "#") {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -56,7 +60,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ delay: i * 0.055, duration: 0.2 }}
-                    onClick={() => scrollTo(item.href)}
+                    onClick={() => handleNav(item.href, item.external)}
                     className="px-3 py-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap rounded-full hover:bg-secondary/70 cursor-pointer"
                   >
                     {item.label}
@@ -120,7 +124,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05, duration: 0.18 }}
-                onClick={() => scrollTo(item.href)}
+                onClick={() => handleNav(item.href, item.external)}
                 className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/70 transition-colors rounded-xl text-left cursor-pointer"
               >
                 {item.label}
