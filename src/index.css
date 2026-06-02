@@ -212,6 +212,53 @@
     transform: scaleX(1);
   }
 
+  /* ── Inscrição CTA button ── */
+  @keyframes shimmer-sweep {
+    0%   { transform: translateX(-120%) skewX(-20deg); }
+    100% { transform: translateX(350%)  skewX(-20deg); }
+  }
+  @keyframes pulse-glow {
+    0%   { box-shadow: 0 0 0 0   hsla(35, 85%, 50%, 0.65), 0 6px 24px hsla(35, 85%, 50%, 0.35); }
+    60%  { box-shadow: 0 0 0 14px hsla(35, 85%, 50%, 0),   0 6px 24px hsla(35, 85%, 50%, 0.35); }
+    100% { box-shadow: 0 0 0 0   hsla(35, 85%, 50%, 0),   0 6px 24px hsla(35, 85%, 50%, 0.35); }
+  }
+
+  .btn-inscricao {
+    padding: 14px 26px;
+    border: none;
+    border-radius: 15px;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    position: relative;
+    font-weight: 700;
+    font-size: 15px;
+    overflow: hidden;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    animation: pulse-glow 2.2s ease-in-out infinite;
+    transition: transform 200ms ease, filter 200ms ease;
+    letter-spacing: 0.01em;
+  }
+  .btn-inscricao::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -55%;
+    width: 35%;
+    height: 220%;
+    background: rgba(255, 255, 255, 0.28);
+    animation: shimmer-sweep 2.6s ease-in-out infinite;
+  }
+  .btn-inscricao:hover {
+    transform: translateY(-3px) scale(1.04);
+    filter: brightness(1.12);
+  }
+
   /* ── Bubbles button ── */
   .btn-bubbles {
     --c1: hsl(var(--background));

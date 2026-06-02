@@ -125,7 +125,7 @@ const Hero = () => {
             href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-fill w-full !py-4 !text-lg"
+            className="btn-inscricao w-full !py-4 !text-lg"
           >
             Inscrições abertas — 28 a 30 de agosto
           </a>
@@ -208,7 +208,7 @@ const Hero = () => {
                     href={FORM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-fill"
+                    className="btn-inscricao"
                   >
                     Inscrições abertas — 28 a 30 de agosto
                   </a>
