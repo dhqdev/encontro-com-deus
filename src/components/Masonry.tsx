@@ -89,6 +89,7 @@ const Masonry = ({
 
   const [containerRef, { width }] = useMeasure();
   const [imagesReady, setImagesReady] = useState(false);
+  const [imgDimensions, setImgDimensions] = useState<Record<string, { w: number; h: number }>>({});
 
   const getInitialPosition = (item: GridItem) => {
     const containerRect = containerRef.current?.getBoundingClientRect();
@@ -116,8 +117,20 @@ const Masonry = ({
   };
 
   useEffect(() => {
-    const imageUrls = items.filter(i => i.img).map(i => i.img!);
-    preloadImages(imageUrls).then(() => setImagesReady(true));
+    const dims: Record<string, { w: number; h: number }> = {};
+    const promises = items.map(item => {
+      if (!item.img) return Promise.resolve();
+      return new Promise<void>(resolve => {
+        const el = new Image();
+        el.onload = () => { dims[item.id] = { w: el.naturalWidth, h: el.naturalHeight }; resolve(); };
+        el.onerror = () => resolve();
+        el.src = item.img!;
+      });
+    });
+    Promise.all(promises).then(() => {
+      setImgDimensions(dims);
+      setImagesReady(true);
+    });
   }, [items]);
 
   const grid = useMemo<GridItem[]>(() => {
@@ -128,12 +141,20 @@ const Masonry = ({
     return items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = columnWidth * col;
-      const h = child.height / 2;
+      // Images: use natural aspect ratio so nothing is cropped
+      // Videos: use provided height / 2 as fallback
+      let h: number;
+      if (child.img && imgDimensions[child.id]) {
+        const { w: natW, h: natH } = imgDimensions[child.id];
+        h = columnWidth * (natH / natW);
+      } else {
+        h = child.height / 2;
+      }
       const y = colHeights[col];
       colHeights[col] += h;
       return { ...child, x, y, w: columnWidth, h };
     });
-  }, [columns, items, width]);
+  }, [columns, items, width, imgDimensions]);
 
   const totalHeight = useMemo(() => {
     if (!grid.length) return 0;
@@ -223,10 +244,13 @@ const Masonry = ({
               {colorShiftOnHover && <div className="masonry-color-overlay" />}
             </div>
           ) : (
-            <div
-              className="masonry-item-img"
-              style={{ backgroundImage: `url(${item.img})` }}
-            >
+            <div className="masonry-item-img">
+              <img
+                src={item.img}
+                alt={item.alt ?? ''}
+                className="masonry-item-photo"
+                draggable={false}
+              />
               {colorShiftOnHover && <div className="masonry-color-overlay" />}
             </div>
           )}

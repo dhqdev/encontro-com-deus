@@ -17,17 +17,17 @@ import louvorMov from "@/assets/gallery/louvor.MOV";
 import louvorMp4 from "@/assets/gallery/louvor.mp4";
 
 const testimonialItems: MasonryItem[] = [
-  { id: "1",  img: t1,            alt: "Testemunho 1",        height: 820 },
-  { id: "2",  video: maosPraCima, alt: "Mãos pra Cima",       height: 700 },
-  { id: "3",  img: t2,            alt: "Testemunho 2",        height: 760 },
-  { id: "4",  video: edmar,       alt: "Testemunho Edmar",    height: 740 },
-  { id: "5",  img: t3,            alt: "Testemunho 3",        height: 840 },
-  { id: "6",  video: silvio,      alt: "Testemunho Silvio",   height: 720 },
-  { id: "7",  img: t4,            alt: "Testemunho 4",        height: 800 },
-  { id: "8",  video: louvorMov,   alt: "Momento de Louvor",   height: 680 },
-  { id: "9",  img: t5,            alt: "Testemunho 5",        height: 780 },
-  { id: "10", video: louvorMp4,   alt: "Louvor",              height: 700 },
-  { id: "11", img: t6,            alt: "Testemunho 6",        height: 830 },
+  { id: "1",  img: t1,            alt: "Testemunho 1",        height: 900 },
+  { id: "2",  video: maosPraCima, alt: "Mãos pra Cima",       height: 1000 },
+  { id: "3",  img: t2,            alt: "Testemunho 2",        height: 900 },
+  { id: "4",  video: edmar,       alt: "Testemunho Edmar",    height: 1000 },
+  { id: "5",  img: t3,            alt: "Testemunho 3",        height: 900 },
+  { id: "6",  video: silvio,      alt: "Testemunho Silvio",   height: 1000 },
+  { id: "7",  img: t4,            alt: "Testemunho 4",        height: 900 },
+  { id: "8",  video: louvorMov,   alt: "Momento de Louvor",   height: 1000 },
+  { id: "9",  img: t5,            alt: "Testemunho 5",        height: 900 },
+  { id: "10", video: louvorMp4,   alt: "Louvor",              height: 1000 },
+  { id: "11", img: t6,            alt: "Testemunho 6",        height: 900 },
 ];
 
 const TestimonialsPage = () => {
