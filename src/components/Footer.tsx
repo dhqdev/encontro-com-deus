@@ -34,13 +34,20 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <a
-                  href="https://wa.me/5519983586167"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  (19) 98358-61679227-9091
+                <a href="https://wa.me/5519983586167" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">
+                  Cleverson &mdash; (19) 98358-6167
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <a href="https://wa.me/5519983867500" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">
+                  Eduardo &mdash; (19) 98386-7500
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <a href="https://wa.me/5519993667494" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">
+                  Camila Estevam &mdash; (19) 99227-9091
                 </a>
               </div>
             </div>
