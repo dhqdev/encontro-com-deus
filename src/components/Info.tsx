@@ -16,7 +16,7 @@ const Info = () => {
     { name: "Cleverson", phone: "(19) 98358-6167" },
     { name: "Geovana",   phone: "(19) 98358-6166" },
     { name: "Eduardo",   phone: "(19) 98386-7500" },
-    { name: "Kamila",    phone: "(19) 99366-7494" },
+    { name: "Kamila",    phone: "(19) 99227-9091" },
   ];
 
   return (

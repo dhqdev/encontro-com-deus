@@ -40,7 +40,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  (19) 98358-6167
+                  (19) 98358-61679227-9091
                 </a>
               </div>
             </div>

@@ -79,7 +79,7 @@ const TestimonialsPage = () => {
             Vidas Transformadas
           </span>
           <h1 className="font-display font-bold text-3xl md:text-5xl text-stone-900 leading-tight mb-3">
-            Histórias que inspiram
+            Histórias Reais
           </h1>
           <p className="text-stone-500 text-sm md:text-base max-w-md mx-auto">
             Momentos reais de fé, cura e renovação vividos no Encontro com Deus.

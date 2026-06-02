@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/gallery/fotogeralencontro2026.jpeg";
 import { motion, AnimatePresence } from "framer-motion";
 import Shuffle from "@/components/Shuffle";
 import photo1 from "@/assets/gallery/photo-1.jpeg";
@@ -39,28 +39,30 @@ const Hero = () => {
           alt="Encontro com Deus - retiro espiritual"
           className="w-full h-full object-cover object-center"
         />
-        {/* Gradiente escuro na parte inferior para legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        {/* Gradiente de cima pra baixo — escurece onde fica o conteúdo do topo */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/30 to-transparent pointer-events-none" />
+        {/* Gradiente de baixo pra cima — legibilidade do botão */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
 
-        {/* Conteúdo centralizado no rodapé da imagem */}
+        {/* Conteúdo no topo — logo após a navbar */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="absolute bottom-0 left-0 right-0 px-6 pb-14 pt-8 text-center"
+          className="absolute top-20 left-0 right-0 px-6 text-center z-10"
         >
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-sm mb-5">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-sm mb-4">
             <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
               Ministério de Transformação
             </span>
           </div>
 
-          <div className="bg-background/70 backdrop-blur-md rounded-2xl px-5 py-4 mb-5 shadow-lg">
+          <div className="bg-background/70 backdrop-blur-md rounded-2xl px-5 py-4 shadow-lg">
             <h1 className="font-jakarta font-semibold leading-snug mb-2">
               <Shuffle
                 text="Bem vindo ao"
                 tag="span"
-                textAlign="left"
+                textAlign="center"
                 className="block text-2xl text-foreground/60 font-light tracking-wide"
                 shuffleDirection="right"
                 duration={0.32}
@@ -77,7 +79,7 @@ const Hero = () => {
               <Shuffle
                 text="Encontro com Deus!"
                 tag="span"
-                textAlign="left"
+                textAlign="center"
                 className="block text-3xl text-accent"
                 shuffleDirection="right"
                 duration={0.38}
@@ -110,12 +112,20 @@ const Hero = () => {
               </span>
             </motion.p>
           </div>
+        </motion.div>
 
+        {/* Botão no rodapé */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
+          className="absolute bottom-0 left-0 right-0 px-6 pb-14 text-center z-10"
+        >
           <a
             href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-fill"
+            className="btn-fill w-full !py-4 !text-lg"
           >
             Inscrição para Agosto
           </a>
