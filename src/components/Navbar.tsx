@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const anchorItems = [
   { label: "Início", href: "#" },
@@ -12,7 +11,6 @@ const anchorItems = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
@@ -23,11 +21,6 @@ const Navbar = () => {
         document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
       }
     }, 250);
-  };
-
-  const goToPage = (path: string) => {
-    setIsOpen(false);
-    navigate(path);
   };
 
   return (
@@ -69,16 +62,7 @@ const Navbar = () => {
                     {item.label}
                   </motion.button>
                 ))}
-                <motion.button
-                  initial={{ opacity: 0, y: -6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ delay: anchorItems.length * 0.055, duration: 0.2 }}
-                  onClick={() => goToPage("/testemunhos")}
-                  className="px-3 py-1 text-sm font-semibold text-accent hover:text-accent/80 transition-colors whitespace-nowrap rounded-full hover:bg-accent/10 cursor-pointer"
-                >
-                  Testemunhos
-                </motion.button>
+
               </motion.div>
             )}
           </AnimatePresence>
@@ -142,15 +126,7 @@ const Navbar = () => {
                 {item.label}
               </motion.button>
             ))}
-            <motion.button
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: anchorItems.length * 0.05, duration: 0.18 }}
-              onClick={() => goToPage("/testemunhos")}
-              className="px-4 py-2 text-sm font-semibold text-accent hover:bg-accent/10 transition-colors rounded-xl text-left cursor-pointer"
-            >
-              Testemunhos
-            </motion.button>
+
           </motion.div>
         )}
       </AnimatePresence>
