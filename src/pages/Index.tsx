@@ -3,6 +3,7 @@ import About from "@/components/About";
 import Info from "@/components/Info";
 import Spiritual from "@/components/Spiritual";
 import Gallery from "@/components/Gallery";
+import Videos from "@/components/Videos";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/Navbar";
@@ -16,6 +17,7 @@ const Index = () => {
       <Info />
       <Spiritual />
       <Gallery />
+      <Videos />
       <Footer />
       <ScrollToTop />
     </main>

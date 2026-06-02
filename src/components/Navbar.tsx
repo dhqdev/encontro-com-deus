@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const navItems = [
+const anchorItems = [
   { label: "Início", href: "#" },
   { label: "Sobre", href: "#sobre" },
   { label: "Informações", href: "#informacoes" },
@@ -11,6 +12,7 @@ const navItems = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
@@ -21,6 +23,11 @@ const Navbar = () => {
         document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
       }
     }, 250);
+  };
+
+  const goToPage = (path: string) => {
+    setIsOpen(false);
+    navigate(path);
   };
 
   return (
@@ -49,7 +56,7 @@ const Navbar = () => {
                 className="hidden md:flex items-center overflow-hidden"
               >
                 <div className="w-px h-3.5 bg-border/70 mx-2 flex-shrink-0" />
-                {navItems.map((item, i) => (
+                {anchorItems.map((item, i) => (
                   <motion.button
                     key={item.href}
                     initial={{ opacity: 0, y: -6 }}
@@ -62,6 +69,16 @@ const Navbar = () => {
                     {item.label}
                   </motion.button>
                 ))}
+                <motion.button
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ delay: anchorItems.length * 0.055, duration: 0.2 }}
+                  onClick={() => goToPage("/testemunhos")}
+                  className="px-3 py-1 text-sm font-semibold text-accent hover:text-accent/80 transition-colors whitespace-nowrap rounded-full hover:bg-accent/10 cursor-pointer"
+                >
+                  Testemunhos
+                </motion.button>
               </motion.div>
             )}
           </AnimatePresence>
@@ -113,7 +130,7 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 350, damping: 28 }}
             className="md:hidden mt-2 bg-background/90 backdrop-blur-md border border-border/70 rounded-2xl shadow-lg py-2 px-1 flex flex-col min-w-[160px]"
           >
-            {navItems.map((item, i) => (
+            {anchorItems.map((item, i) => (
               <motion.button
                 key={item.href}
                 initial={{ opacity: 0, x: -8 }}
@@ -125,6 +142,15 @@ const Navbar = () => {
                 {item.label}
               </motion.button>
             ))}
+            <motion.button
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: anchorItems.length * 0.05, duration: 0.18 }}
+              onClick={() => goToPage("/testemunhos")}
+              className="px-4 py-2 text-sm font-semibold text-accent hover:bg-accent/10 transition-colors rounded-xl text-left cursor-pointer"
+            >
+              Testemunhos
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { motion, AnimatePresence } from "framer-motion";
+import Shuffle from "@/components/Shuffle";
 import photo1 from "@/assets/gallery/photo-1.jpeg";
 import photo2 from "@/assets/gallery/photo-2.jpeg";
 import photo6 from "@/assets/gallery/photo-6.jpeg";
 import photo7 from "@/assets/gallery/photo-7.jpeg";
 import photo8 from "@/assets/gallery/photo-8.jpeg";
+import equipeinterna from "@/assets/gallery/equipeinterna.jpeg";
 
 const FORM_URL =
   "https://encontrocomdeus-inne.vercel.app/inscrever";
 
 const Hero = () => {
-  const slideshowPhotos = [photo6, photo7, photo8];
+  const slideshowPhotos = [photo6, photo7, photo8, equipeinterna];
   const slideshowPhrases = [
     "Experimente a presença de Deus",
     "Um fim de semana que transforma vidas",
     "Venha e seja renovado",
+    "Uma equipe preparada pra te acolher",
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -54,22 +57,40 @@ const Hero = () => {
 
           <div className="bg-background/70 backdrop-blur-md rounded-2xl px-5 py-4 mb-5 shadow-lg">
             <h1 className="font-jakarta font-semibold leading-snug mb-2">
-              <motion.span
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: "easeOut", delay: 0.25 }}
+              <Shuffle
+                text="Bem vindo ao"
+                tag="span"
+                textAlign="left"
                 className="block text-2xl text-foreground/60 font-light tracking-wide"
-              >
-                Bem vindo ao
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: "easeOut", delay: 0.45 }}
+                shuffleDirection="right"
+                duration={0.32}
+                animationMode="evenodd"
+                shuffleTimes={1}
+                ease="power3.out"
+                stagger={0.03}
+                threshold={0.1}
+                triggerOnce={true}
+                triggerOnHover={true}
+                respectReducedMotion={true}
+                loop={false}
+              />
+              <Shuffle
+                text="Encontro com Deus!"
+                tag="span"
+                textAlign="left"
                 className="block text-3xl text-accent"
-              >
-                Encontro com Deus!
-              </motion.span>
+                shuffleDirection="right"
+                duration={0.38}
+                animationMode="evenodd"
+                shuffleTimes={1}
+                ease="power3.out"
+                stagger={0.04}
+                threshold={0.1}
+                triggerOnce={true}
+                triggerOnHover={true}
+                respectReducedMotion={true}
+                loop={false}
+              />
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -96,7 +117,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="btn-fill"
           >
-            Quero Participar
+            Inscrição para Agosto
           </a>
         </motion.div>
       </div>
@@ -120,22 +141,40 @@ const Hero = () => {
 
               <div>
                 <h1 className="font-jakarta font-semibold leading-snug mb-4">
-                  <motion.span
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                  <Shuffle
+                    text="Bem vindo ao"
+                    tag="span"
+                    textAlign="left"
                     className="block text-xl lg:text-2xl text-foreground/50 font-light tracking-widest uppercase"
-                  >
-                    Bem vindo ao
-                  </motion.span>
-                  <motion.span
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, ease: "easeOut", delay: 0.3 }}
+                    shuffleDirection="right"
+                    duration={0.32}
+                    animationMode="evenodd"
+                    shuffleTimes={1}
+                    ease="power3.out"
+                    stagger={0.03}
+                    threshold={0.1}
+                    triggerOnce={true}
+                    triggerOnHover={true}
+                    respectReducedMotion={true}
+                    loop={false}
+                  />
+                  <Shuffle
+                    text="Encontro com Deus!"
+                    tag="span"
+                    textAlign="left"
                     className="block text-4xl lg:text-5xl text-accent"
-                  >
-                    Encontro com Deus!
-                  </motion.span>
+                    shuffleDirection="right"
+                    duration={0.4}
+                    animationMode="evenodd"
+                    shuffleTimes={1}
+                    ease="power3.out"
+                    stagger={0.045}
+                    threshold={0.1}
+                    triggerOnce={true}
+                    triggerOnHover={true}
+                    respectReducedMotion={true}
+                    loop={false}
+                  />
                 </h1>
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -161,7 +200,7 @@ const Hero = () => {
                     rel="noopener noreferrer"
                     className="btn-fill"
                   >
-                    Quero Participar
+                    Inscrição para Agosto
                   </a>
                   <a
                     href="https://wa.me/5519983586167?text=Ola%20tudo%20bem%20Cleo%20%3F%20quero%20saber%20mais%20sobre%20o%20encontro%21"

@@ -9,6 +9,7 @@ export default defineConfig(() => ({
     port: 8080,
   },
   plugins: [react()],
+  assetsInclude: ["**/*.MOV"],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
