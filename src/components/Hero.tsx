@@ -127,7 +127,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="btn-inscricao w-full !py-4 !text-lg"
           >
-            Inscrições abertas — 28 a 30 de agosto
+            Inscrições abertas — 23 a 25 de outubro
           </a>
         </motion.div>
       </div>
@@ -210,7 +210,7 @@ const Hero = () => {
                     rel="noopener noreferrer"
                     className="btn-inscricao"
                   >
-                    Inscrições abertas — 28 a 30 de agosto
+                    Inscrições abertas — 23 a 25 de outubro
                   </a>
                   <a
                     href="https://wa.me/5519983586167?text=Ola%20tudo%20bem%20Cleo%20%3F%20quero%20saber%20mais%20sobre%20o%20encontro%21"

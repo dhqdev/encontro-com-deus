@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rniE \"outubro|novembro|setembro|de out|/10/|20 a |21 a |[0-9]{1,2} ?a ?[0-9]{1,2} de\" --include=\"*.tsx\" --include=\"*.ts\" --include=\"*.html\" --include=\"*.md\" src index.html README.md)"
+    ]
+  }
+}
